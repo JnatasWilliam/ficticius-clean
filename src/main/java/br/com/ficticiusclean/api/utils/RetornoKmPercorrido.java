@@ -21,11 +21,11 @@ public class RetornoKmPercorrido {
 		Combustivel gasolina = new Combustivel();
 
 		gasolina.setPrecoGasolina(7.99);
-		gasolina.setTotalKmPercorrigoEstrada(15);
-		gasolina.setTotaKmPercorrigoCidade(12);
+		gasolina.setTotalKmPercorridoEstrada(15);
+		gasolina.setTotaKmPercorridoCidade(12);
 
-		double consumoMedioE = gasolina.getTotalKmPercorrigoEstrada() / veiculo.getConsumoMedioEstrada();
-		double consumoMedioC = gasolina.getTotaKmPercorrigoCidade() / veiculo.getConsumoMedioCidade();
+		double consumoMedioE = gasolina.getTotalKmPercorridoEstrada() / veiculo.getConsumoMedioEstrada();
+		double consumoMedioC = gasolina.getTotaKmPercorridoCidade() / veiculo.getConsumoMedioCidade();
 		
 		return new double[] {consumoMedioE, consumoMedioC};
 	}	

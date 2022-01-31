@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import br.com.ficticiusclean.api.utils.RetornoKmPercorrido;
 
 @Service
-public class CalculoConsumoVeiculoService {
+public class CalculoConsumoVeiculoServiço {
 
 	public double[] caclularPrecoGasolinaPorKmEmCidade() {
 		

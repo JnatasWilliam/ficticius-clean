@@ -16,14 +16,15 @@ public class Combustivel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cod_combustivel")
 	private Integer codigoCombustivel;
 	
 	@Column(name = "preco_gasolina")
 	private double precoGasolina;
 	
-	@Column(name = "total_km_percorrigo_C")
-	private int totaKmPercorrigoCidade;
+	@Column(name = "total_km_percorrido_C")
+	private int totaKmPercorridoCidade;
 	
-	@Column(name = "total_km_percorrigo_e")
-	private int totalKmPercorrigoEstrada;
+	@Column(name = "total_km_percorrido_e")
+	private int totalKmPercorridoEstrada;
 }
