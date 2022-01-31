@@ -1,7 +1,5 @@
 package br.com.ficticiusclean.api.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,4 +25,8 @@ public class Previsao{
 	
 	@Column(name = "valor_total_gasto")
 	private Long valorTotalGasto;
+	
+	@ManyToOne
+	@JoinColumn(name = "codigo_veiculo", referencedColumnName = "cod_veiculo" )
+	private Veiculo veiculo;
 }

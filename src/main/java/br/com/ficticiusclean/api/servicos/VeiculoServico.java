@@ -22,5 +22,4 @@ public class VeiculoServico {
 	public Optional<Veiculo> listaPorID(Integer codigoVeiculo){
 		return veiculoRepositorio.findById(codigoVeiculo);
 	}
-		
 }
