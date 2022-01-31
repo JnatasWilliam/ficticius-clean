@@ -11,42 +11,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
-@Table(name = "combustivel")
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-public class Previsao {
+@Table(name = "previsao")
+@Data
+public class Previsao{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int codigoPrevisao;
-	
-	@Column(name = "nome")
-	private String nome;
-	
-	@Column(name = "marca")
-	private String marca;
-	
-	@Column(name = "modelo")
-	private String modelo; 
-	
-	@Column(name = "ano")
-	private Date ano;
+	private Integer codigoPrevisao;
 	
 	@Column(name = "quantidade_combustive_gasto")
 	private Long quantidadeCombustiveGasto;
 	
 	@Column(name = "valor_total_gasto")
 	private Long valorTotalGasto;
-	
-	@ManyToOne
-	@JoinColumn(name = "codigo_veiculo", referencedColumnName = "cod_veiculo") 
-	private Veiculo codigoVeiculo;
 }

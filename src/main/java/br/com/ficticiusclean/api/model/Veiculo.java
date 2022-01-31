@@ -9,29 +9,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "veiculo")
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 public class Veiculo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cod_veiculo")
-	private int codigoVeiculo;
+	Integer codigoVeiculo;
 	
 	@Column(name = "nome")
-	private String nome;
+	protected String nome;
 	
 	@Column(name = "marca")
-	private String marca;
+	protected String marca;
 	
 	@Column(name = "modelo")
-	private String modelo;
+	protected String modelo;
 	
 	@Column(name = "data_fabricacao")
 	private Date dataFabricacao;
@@ -41,5 +38,4 @@ public class Veiculo {
 	
 	@Column(name = "consumo_medio_e")
 	private long consumoMedioEstrada;
-
 }

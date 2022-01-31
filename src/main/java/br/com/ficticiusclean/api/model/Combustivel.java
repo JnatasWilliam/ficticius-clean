@@ -7,25 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 @Entity
 @Table(name = "combustivel")
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
+@Data
 public class Combustivel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int codigoCombustivel;
+	private Integer codigoCombustivel;
 	
 	@Column(name = "preco_gasolina")
-	private int precoGasolina;
+	private double precoGasolina;
 	
 	@Column(name = "total_km_percorrigo_C")
 	private int totaKmPercorrigoCidade;
