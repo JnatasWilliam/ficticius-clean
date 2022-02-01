@@ -11,7 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EntityScan(basePackages = {"br.com.ficticiusclean.api.model"})
 @EnableJpaRepositories(basePackages = {"br.com.ficticiusclean.api.repositorio"})
-@ComponentScan(basePackages = {"br.com.ficticiusclean.api.servicos", "br.com.ficticiusclean.api.controlador"})
+@ComponentScan(basePackages = {"br.com.ficticiusclean.api.servicos", "br.com.ficticiusclean.api.controlador", "br.com.ficticiusclean.api.utils"})
 @SpringBootApplication
 public class Application {
 	

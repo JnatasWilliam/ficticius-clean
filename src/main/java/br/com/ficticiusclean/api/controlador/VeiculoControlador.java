@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ficticiusclean.api.model.Veiculo;
 import br.com.ficticiusclean.api.servicos.VeiculoServico;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
 
-@Api(tags = "Veiculo")
 @RestController
 @RequestMapping("/veiculo")
 public class VeiculoControlador {
@@ -26,20 +24,20 @@ public class VeiculoControlador {
 	@Autowired
 	private VeiculoServico veiculoServico;
 	
-	@ApiOperation(value = "listar")
+	@Operation(summary = "Lista veiculos", description = "Retorna todos os veiculos")
 	@GetMapping
 	public List<Veiculo> listarVeiculos(){
 		return veiculoServico.listaVeiculos();
 	}
 	
-	@ApiOperation(value = "listar Por Id")
+	@Operation(summary = "Lista veiculos por id", description = "Retorna todos os veiculos por id")
 	@GetMapping("/{codigoVeiculo}")
 	public ResponseEntity<Optional<Veiculo>> listaPorID(@PathVariable Integer codigoVeiculo){
 		Optional<Veiculo> veiculo = veiculoServico.listaPorID(codigoVeiculo);
 		return veiculo.isPresent() ? ResponseEntity.ok(veiculo) : ResponseEntity.notFound().build();
 	}
 	
-	@ApiOperation(value = "Salvar Veiculo")
+	@Operation(summary = "Cadastro veiculos", description = "Cadastro de novos veiculos")
 	@PostMapping
 	public ResponseEntity<Veiculo> cadastrarVeiculo(@RequestBody Veiculo veiculo){
 		Veiculo cadastroVeiculo = veiculoServico.salvar(veiculo);
