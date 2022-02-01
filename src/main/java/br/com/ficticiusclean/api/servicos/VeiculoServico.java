@@ -22,4 +22,8 @@ public class VeiculoServico {
 	public Optional<Veiculo> listaPorID(Integer codigoVeiculo){
 		return veiculoRepositorio.findById(codigoVeiculo);
 	}
+	
+	public Veiculo salvar(Veiculo veiculo) {
+		return veiculoRepositorio.save(veiculo);
+	}
 }

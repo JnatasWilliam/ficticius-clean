@@ -1,6 +1,6 @@
 CREATE TABLE combustivel (
 	cod_combustivel INT PRIMARY KEY AUTO_INCREMENT,
-	preco_gasolina DECIMAL NOT NULL,
+	preco_gasolina NUMERIC(15,2) NOT NULL,
 	total_km_percorrido_C INT NOT NULL,
 	total_km_percorrido_e INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
