@@ -41,10 +41,6 @@ public class Veiculo {
 	@Column(name = "consumo_medio_e")
 	private long consumoMedioEstrada;
 
-	@OneToOne
-	@JoinColumn(name = "codigo_previsao", referencedColumnName = "cod_previsao")
-	private Previsao previsao;
-
 	public Veiculo() {
 		
 	}
