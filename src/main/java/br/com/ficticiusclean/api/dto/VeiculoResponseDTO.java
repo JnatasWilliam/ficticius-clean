@@ -2,6 +2,7 @@ package br.com.ficticiusclean.api.dto;
 
 import java.util.Date;
 
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import br.com.ficticiusclean.api.model.Veiculo;
@@ -22,16 +23,22 @@ public class VeiculoResponseDTO {
 
 	@NotNull
 	private Date dataFabricacao;
+	
+	private Long total;
+	
+	private Long totalConsumo;
 
 	public static VeiculoResponseDTO converterParaVeiculoDTO(Veiculo veiculo) {
 		return new VeiculoResponseDTO(veiculo.getNome(), veiculo.getMarca(), veiculo.getModelo(),
-				veiculo.getDataFabricacao());
+				veiculo.getDataFabricacao(), veiculo.getTotal(), veiculo.getTotalConsumo());
 	}
 
-	public VeiculoResponseDTO(String nome, String marca, String modelo, Date dataFabricacao) {
+	public VeiculoResponseDTO(String nome, String marca, String modelo, Date dataFabricacao, Long total, Long totalConsumo) {
 		this.nome = nome;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.dataFabricacao = dataFabricacao;
+		this.total = total;
+		this.totalConsumo = totalConsumo;
 	}
 }

@@ -7,15 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "veiculo")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Veiculo {
 
 	@Id
@@ -40,18 +43,16 @@ public class Veiculo {
 
 	@Column(name = "consumo_medio_e")
 	private long consumoMedioEstrada;
+	
+	@Transient
+	private Long total;
+	
+	@Transient
+	private Long totalConsumo;
 
-	public Veiculo() {
-		
-	}
-
-	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, long consumoMedioCidade,
-			long consumoMedioEstrada) {
+	public Veiculo(String nome, Long total, Long totalConsumo) {
 		this.nome = nome;
-		this.marca = marca;
-		this.modelo = modelo;
-		this.dataFabricacao = dataFabricacao;
-		this.consumoMedioCidade = consumoMedioCidade;
-		this.consumoMedioEstrada = consumoMedioEstrada;
+		this.total = total;
+		this.totalConsumo = totalConsumo;
 	}
 }

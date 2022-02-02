@@ -30,8 +30,8 @@ public class VeiculoRequestDTO {
 	private long consumoMedioEstrada;
 	
 	public Veiculo converterParaEntidade() {
-		return new Veiculo(nome,  marca, modelo, dataFabricacao, consumoMedioCidade,
-				consumoMedioEstrada);
+		return new Veiculo(null, nome,  marca, modelo, dataFabricacao, consumoMedioCidade,
+				consumoMedioEstrada, consumoMedioCidade, null);
 	}
 
 }

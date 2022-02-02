@@ -7,10 +7,8 @@ import lombok.Data;
 @Data
 public class PrevisaoDTO {
 	
-	@Schema(accessMode = Schema.AccessMode.READ_ONLY)
-	Integer codigoPrevisao;
+	long precoGasolina;
+	long totaKmPercorridoCidade; 
+	long totalKmPercorridoEstrada;
 	
-	private Double quantidadeCombustiveGasto;
-	
-	private Double valorTotalGasto;
 }
