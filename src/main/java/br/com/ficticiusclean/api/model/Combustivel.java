@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 
@@ -14,18 +13,28 @@ import lombok.Data;
 @Table(name = "combustivel")
 @Data
 public class Combustivel {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cod_combustivel")
 	private Integer codigoCombustivel;
-	
+
 	@Column(name = "preco_gasolina")
 	private double precoGasolina;
-	
+
 	@Column(name = "total_km_percorrido_C")
-	private int totaKmPercorridoCidade;
-	
+	private double totaKmPercorridoCidade;
+
 	@Column(name = "total_km_percorrido_e")
-	private int totalKmPercorridoEstrada;
+	private double totalKmPercorridoEstrada;
+
+	public Combustivel() {
+
+	}
+
+	public Combustivel(double precoGasolina, double totaKmPercorridoCidade, double totalKmPercorridoEstrada) {
+		this.precoGasolina = precoGasolina;
+		this.totaKmPercorridoCidade = totaKmPercorridoCidade;
+		this.totalKmPercorridoEstrada = totalKmPercorridoEstrada;
+	}
 }

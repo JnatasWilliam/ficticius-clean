@@ -1,6 +1,5 @@
 package br.com.ficticiusclean.api.servicos;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -34,5 +33,4 @@ public class CombustivelServico {
 		}
 		return combustivel.get();
 	}
-
 }
