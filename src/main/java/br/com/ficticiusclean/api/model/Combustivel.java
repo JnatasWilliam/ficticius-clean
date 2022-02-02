@@ -37,4 +37,11 @@ public class Combustivel {
 		this.totaKmPercorridoCidade = totaKmPercorridoCidade;
 		this.totalKmPercorridoEstrada = totalKmPercorridoEstrada;
 	}
+	
+
+	public Combustivel(Integer codigoCombustivel, double precoGasolina, double totaKmPercorridoCidade, double totalKmPercorridoEstrada) {
+		this.precoGasolina = precoGasolina;
+		this.totaKmPercorridoCidade = totaKmPercorridoCidade;
+		this.totalKmPercorridoEstrada = totalKmPercorridoEstrada;
+	}
 }
