@@ -2,7 +2,7 @@
 Teste Consumo Combustivel
 
 # Etapas
-Faça o clone do projeto
+Faça o clone do projeto em seguida execute:
 mvn clean package
 
 ##Para iniciar o docker basta utilizar o comando 
