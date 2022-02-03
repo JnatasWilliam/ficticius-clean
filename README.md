@@ -5,7 +5,7 @@ Teste Consumo Combustivel
 Faça o clone do projeto em seguida execute:
 mvn clean package
 
-##Para iniciar o docker basta utilizar o comando 
+#Para iniciar o docker basta utilizar o comando 
   docker-compose up-d
   ##Caso queira verificar a tabela
     docker exec -it mysql mysql -ugerenciacombustivel -pgerenciacombustivel
