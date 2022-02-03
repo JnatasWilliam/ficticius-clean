@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.ficticiusclean.api.dto.NewVeiculoResponseDTO;
 import br.com.ficticiusclean.api.dto.PrevisaoDTO;
 import br.com.ficticiusclean.api.dto.VeiculoRequestDTO;
 import br.com.ficticiusclean.api.dto.VeiculoResponseDTO;
@@ -27,12 +28,12 @@ public class VeiculoControlador {
 
 	@Operation(summary = "Cadastro veiculos", description = "Cadastro de novos veiculos")
 	@PostMapping
-	public ResponseEntity<VeiculoResponseDTO> cadastrarVeiculo(@RequestBody VeiculoRequestDTO veiculoDto) {
+	public ResponseEntity<NewVeiculoResponseDTO> cadastrarVeiculo(@RequestBody VeiculoRequestDTO veiculoDto) {
 		Veiculo cadastroVeiculo = veiculoServico.salvar(veiculoDto.converterParaEntidade());
-		return ResponseEntity.status(HttpStatus.CREATED).body(VeiculoResponseDTO.converterParaVeiculoDTO(cadastroVeiculo));
+		return ResponseEntity.status(HttpStatus.CREATED).body(NewVeiculoResponseDTO.converterParaVeiculoDTO(cadastroVeiculo));
 	}
 	
-	@Operation(summary = "Cadastro veiculos", description = "Cadastro de novos veiculos")
+	@Operation(summary = "Prever gastos", description = "Lista os veiculos por orem do mais economico pro que mais gasta.")
 	@PostMapping("/prever")
 	public List<VeiculoResponseDTO> preveGasto(@RequestBody PrevisaoDTO previsaoDto) {
 		return veiculoServico.preverGasto(previsaoDto).stream().map(veiculo -> VeiculoResponseDTO.converterParaVeiculoDTO(veiculo))

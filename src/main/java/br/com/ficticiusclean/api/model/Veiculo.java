@@ -46,6 +46,8 @@ public class Veiculo {
 	@Transient
 	private long totalAConsumir;
 
+	
+	
 	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, long totalAConsumir,
 			double valorTotalAGastar) {
 		this.nome = nome;
@@ -54,5 +56,16 @@ public class Veiculo {
 		this.dataFabricacao = dataFabricacao;
 		this.valorTotalAGastar = valorTotalAGastar;
 		this.totalAConsumir = totalAConsumir;
+	}
+
+	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, long consumoMedioCidade,
+			long consumoMedioEstrada) {
+		super();
+		this.nome = nome;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.dataFabricacao = dataFabricacao;
+		this.consumoMedioCidade = consumoMedioCidade;
+		this.consumoMedioEstrada = consumoMedioEstrada;
 	}
 }
