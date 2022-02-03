@@ -39,20 +39,20 @@ public class Veiculo {
 
 	@Column(name = "consumo_medio_e")
 	private long consumoMedioEstrada;
-	
-	@Transient
-	private long totalCombustivelGasto;
-	
-	@Transient
-	private long valorTotalConsumo;
 
-	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, long totalCombustivelGasto,
-			long valorTotalConsumo) {
+	@Transient
+	private double valorTotalAGastar;
+
+	@Transient
+	private long totalAConsumir;
+
+	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, long totalAConsumir,
+			double valorTotalAGastar) {
 		this.nome = nome;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.dataFabricacao = dataFabricacao;
-		this.totalCombustivelGasto = totalCombustivelGasto;
-		this.valorTotalConsumo = valorTotalConsumo;
+		this.valorTotalAGastar = valorTotalAGastar;
+		this.totalAConsumir = totalAConsumir;
 	}
 }

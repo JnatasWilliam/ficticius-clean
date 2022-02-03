@@ -23,21 +23,21 @@ public class VeiculoResponseDTO {
 	@NotNull
 	private Date dataFabricacao;
 	
-	private double totalCombustivelGasto;
+	private double valorTotalAGastar;
 	
-	private double valorTotalConsumo;
+	private long totalAConsumir;
 
 	public static VeiculoResponseDTO converterParaVeiculoDTO(Veiculo veiculo) {
 		return new VeiculoResponseDTO(veiculo.getNome(), veiculo.getMarca(), veiculo.getModelo(),
-				veiculo.getDataFabricacao(), veiculo.getTotalCombustivelGasto(), veiculo.getValorTotalConsumo());
+				veiculo.getDataFabricacao(), veiculo.getValorTotalAGastar(), veiculo.getTotalAConsumir());
 	}
  
-	public VeiculoResponseDTO(String nome, String marca, String modelo, Date dataFabricacao, double totalCombustivelGasto, double valorTotalConsumo) {
+	public VeiculoResponseDTO(String nome, String marca, String modelo, Date dataFabricacao, double valorTotalAGastar, long totalAConsumir) {
 		this.nome = nome;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.dataFabricacao = dataFabricacao;
-		this.totalCombustivelGasto = totalCombustivelGasto;
-		this.valorTotalConsumo = valorTotalConsumo;
+		this.valorTotalAGastar = valorTotalAGastar;
+		this.totalAConsumir = totalAConsumir;
 	}
 }

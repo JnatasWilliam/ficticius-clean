@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class PrevisaoDTO {
 	
-	long precoGasolina;
+	double precoGasolina;
 	long totaKmPercorridoCidade; 
 	long totalKmPercorridoEstrada;
 }
