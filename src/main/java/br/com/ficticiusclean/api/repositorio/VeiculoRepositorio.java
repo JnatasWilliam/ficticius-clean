@@ -14,9 +14,9 @@ public interface VeiculoRepositorio extends JpaRepository<Veiculo, Integer> {
 			+ " v.modelo, "
 			+ " v.dataFabricacao, "
 			+ " ( ( ?2 / v.consumoMedioCidade ) + ( ?3 / v.consumoMedioEstrada) ) AS totalAConsumir, " 
-			+ " ( cast( ( ( ?2 / v.consumoMedioCidade ) + ( ?3 / v.consumoMedioEstrada ) ) as double ) * ?1 ) AS valorTotalAGastar) "
+			+ " ( ( ( ?2 / v.consumoMedioCidade ) + ( ?3 / v.consumoMedioEstrada ) ) * ?1 ) AS valorTotalAGastar) "
 			+ " FROM Veiculo v "
 			+ " ORDER BY valorTotalAGastar ASC "
 		)
-	public List<Veiculo> listarPorgasto(double precoGasolina, long totaKmPercorridoCidade, long totalKmPercorridoEstrada);
+	public List<Veiculo> listarPorgasto(double precoGasolina, double totaKmPercorridoCidade, double totalKmPercorridoEstrada);
 }

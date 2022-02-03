@@ -8,6 +8,6 @@ import lombok.Data;
 public class PrevisaoDTO {
 	
 	double precoGasolina;
-	long totaKmPercorridoCidade; 
-	long totalKmPercorridoEstrada;
+	double totaKmPercorridoCidade; 
+	double totalKmPercorridoEstrada;
 }

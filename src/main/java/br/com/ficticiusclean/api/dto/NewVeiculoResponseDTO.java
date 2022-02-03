@@ -19,16 +19,16 @@ public class NewVeiculoResponseDTO {
 
 	private Date dataFabricacao;
 	
-	private long consumoMedioCidade;
+	private double consumoMedioCidade;
 
-	private long consumoMedioEstrada;
+	private double consumoMedioEstrada;
 	
 	public static NewVeiculoResponseDTO converterParaVeiculoDTO(Veiculo veiculo) {
 		return new NewVeiculoResponseDTO(veiculo.getNome(), veiculo.getMarca(), veiculo.getModelo(),
 				veiculo.getDataFabricacao(), veiculo.getConsumoMedioCidade(), veiculo.getConsumoMedioEstrada());
 	}
  
-	public NewVeiculoResponseDTO(String nome, String marca, String modelo, Date dataFabricacao, long consumoMedioCidade, long consumoMedioEstrada) {
+	public NewVeiculoResponseDTO(String nome, String marca, String modelo, Date dataFabricacao, double consumoMedioCidade, double consumoMedioEstrada) {
 		this.nome = nome;
 		this.marca = marca;
 		this.modelo = modelo;

@@ -35,20 +35,20 @@ public class Veiculo {
 	private Date dataFabricacao;
 
 	@Column(name = "consumo_medio_c")
-	private long consumoMedioCidade;
+	private double consumoMedioCidade;
 
 	@Column(name = "consumo_medio_e")
-	private long consumoMedioEstrada;
+	private double consumoMedioEstrada;
 
 	@Transient
 	private double valorTotalAGastar;
 
 	@Transient
-	private long totalAConsumir;
+	private double totalAConsumir;
 
 	
 	
-	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, long totalAConsumir,
+	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, double totalAConsumir,
 			double valorTotalAGastar) {
 		this.nome = nome;
 		this.marca = marca;
@@ -58,8 +58,8 @@ public class Veiculo {
 		this.totalAConsumir = totalAConsumir;
 	}
 
-	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, long consumoMedioCidade,
-			long consumoMedioEstrada) {
+	public Veiculo(Integer codigoVeiculo, String nome, String marca, String modelo, Date dataFabricacao, double consumoMedioCidade,
+			double consumoMedioEstrada) {
 		super();
 		this.nome = nome;
 		this.marca = marca;

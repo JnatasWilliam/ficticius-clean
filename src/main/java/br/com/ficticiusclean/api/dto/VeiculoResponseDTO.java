@@ -25,14 +25,14 @@ public class VeiculoResponseDTO {
 	
 	private double valorTotalAGastar;
 	
-	private long totalAConsumir;
+	private double totalAConsumir;
 
 	public static VeiculoResponseDTO converterParaVeiculoDTO(Veiculo veiculo) {
 		return new VeiculoResponseDTO(veiculo.getNome(), veiculo.getMarca(), veiculo.getModelo(),
 				veiculo.getDataFabricacao(), veiculo.getValorTotalAGastar(), veiculo.getTotalAConsumir());
 	}
  
-	public VeiculoResponseDTO(String nome, String marca, String modelo, Date dataFabricacao, double valorTotalAGastar, long totalAConsumir) {
+	public VeiculoResponseDTO(String nome, String marca, String modelo, Date dataFabricacao, double valorTotalAGastar, double totalAConsumir) {
 		this.nome = nome;
 		this.marca = marca;
 		this.modelo = modelo;

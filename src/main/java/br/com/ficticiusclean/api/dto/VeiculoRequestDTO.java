@@ -24,13 +24,13 @@ public class VeiculoRequestDTO {
 	private Date dataFabricacao;
 	
 	@NotNull
-	private long consumoMedioCidade;
+	private double consumoMedioCidade;
 
 	@NotNull
-	private long consumoMedioEstrada;
+	private double consumoMedioEstrada;
 	
 	public Veiculo converterParaEntidade() {
-		return new Veiculo(nome,  marca, modelo, dataFabricacao, consumoMedioCidade,
+		return new Veiculo(null, nome,  marca, modelo, dataFabricacao, consumoMedioCidade,
 				consumoMedioEstrada);
 	}
 
