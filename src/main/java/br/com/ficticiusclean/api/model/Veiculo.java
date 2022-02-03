@@ -10,21 +10,23 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import lombok.Builder;
 import lombok.Data;
-
+    
 @Entity
 @Table(name = "veiculo")
 @Data
+@Builder
 public class Veiculo {
-
+     
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cod_veiculo")
 	Integer codigoVeiculo;
 
 	@Column(name = "nome")
-	private String nome;
-
+	private String nome; 
+  
 	@Column(name = "marca")
 	private String marca;
 
@@ -45,9 +47,8 @@ public class Veiculo {
 
 	@Transient
 	private double totalAConsumir;
-
-	
-	
+     
+    	
 	public Veiculo(String nome, String marca, String modelo, Date dataFabricacao, double totalAConsumir,
 			double valorTotalAGastar) {
 		this.nome = nome;
@@ -60,12 +61,25 @@ public class Veiculo {
 
 	public Veiculo(Integer codigoVeiculo, String nome, String marca, String modelo, Date dataFabricacao, double consumoMedioCidade,
 			double consumoMedioEstrada) {
-		super();
 		this.nome = nome;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.dataFabricacao = dataFabricacao;
 		this.consumoMedioCidade = consumoMedioCidade;
 		this.consumoMedioEstrada = consumoMedioEstrada;
+	}
+
+	public Veiculo(Integer codigoVeiculo, String nome, String marca, String modelo, Date dataFabricacao,
+			double consumoMedioCidade, double consumoMedioEstrada, double valorTotalAGastar, double totalAConsumir) {
+		super();
+		this.codigoVeiculo = codigoVeiculo;
+		this.nome = nome;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.dataFabricacao = dataFabricacao;
+		this.consumoMedioCidade = consumoMedioCidade;
+		this.consumoMedioEstrada = consumoMedioEstrada;
+		this.valorTotalAGastar = valorTotalAGastar;
+		this.totalAConsumir = totalAConsumir;
 	}
 }

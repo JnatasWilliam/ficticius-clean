@@ -6,14 +6,16 @@ import javax.validation.constraints.NotNull;
 
 import br.com.ficticiusclean.api.model.Veiculo;
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Builder;
 import lombok.Data;
-
+ 
 @Schema(description = "Retorno veiculo")
-@Data
+@Data  
+@Builder
 public class VeiculoResponseDTO {
 	@NotNull
 	protected String nome;
-
+  
 	@NotNull
 	protected String marca;
 
@@ -22,7 +24,7 @@ public class VeiculoResponseDTO {
 
 	@NotNull
 	private Date dataFabricacao;
-	
+ 	
 	private double valorTotalAGastar;
 	
 	private double totalAConsumir;
