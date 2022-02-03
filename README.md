@@ -12,5 +12,5 @@ mvn clean package
     
  # Link do Swagger
 http://localhost:8080/swagger-ui.html
-    Nesse caso o usuário será redirecionado para outra url pois foi utilizado o OpenApi pois apenas o swagger não é compativel com a versao do Spring Tool Suite que foi 
+    Nesse caso o usuário será redirecionado para outra url pois foi utilizado o OpenApi pois apenas o swagger não é compatível com a versao do Spring Tool Suite que foi 
  utilizado nese projeto. 
