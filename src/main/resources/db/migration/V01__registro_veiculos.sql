@@ -4,8 +4,8 @@ CREATE TABLE veiculo (
 	marca VARCHAR(30) NOT NULL,
 	modelo VARCHAR(30) NOT NULL, 
 	data_fabricacao DATE NOT NULL,
-	consumo_medio_c BIGINT NOT NULL,
-	consumo_medio_e BIGINT NOT NULL
+	consumo_medio_c DOUBLE NOT NULL,
+	consumo_medio_e DOUBLE NOT NULL
 	
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

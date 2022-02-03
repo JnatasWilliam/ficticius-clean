@@ -10,5 +10,4 @@ public class PrevisaoDTO {
 	long precoGasolina;
 	long totaKmPercorridoCidade; 
 	long totalKmPercorridoEstrada;
-	
 }

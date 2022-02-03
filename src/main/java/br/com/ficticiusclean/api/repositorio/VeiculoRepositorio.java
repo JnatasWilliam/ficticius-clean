@@ -9,11 +9,14 @@ import java.util.List;
 public interface VeiculoRepositorio extends JpaRepository<Veiculo, Integer> {
 
 	@Query("SELECT "
-			+ " new Veiculo(nome , "
-			+ " ((consumoMedioCidade * ?2) + (consumoMedioEstrada * ?3)) AS total, " 
-			+ " ((consumoMedioCidade * ?1 * ?2 ) + (consumoMedioEstrada * ?1 * ?3)) AS totalConsumo) "
-			+ " FROM Veiculo "
-			+ " ORDER BY totalConsumo ASC "
+			+ " new Veiculo( v.nome , "
+			+ " v.marca, "
+			+ " v.modelo, "
+			+ " v.dataFabricacao, "
+			+ " ( ( ?2 / v.consumoMedioCidade ) + ( ?3 / v.consumoMedioEstrada) ) AS totalCombustivelGasto, " 
+			+ " ( ( ( ?2 / v.consumoMedioCidade ) + ( ?3 / v.consumoMedioEstrada ) ) * ?1 ) AS valorTotalConsumo) "
+			+ " FROM Veiculo v "
+			+ " ORDER BY valorTotalConsumo ASC "
 		)
 	public List<Veiculo> listarPorgasto(long precoGasolina, long totaKmPercorridoCidade, long totalKmPercorridoEstrada);
 }
